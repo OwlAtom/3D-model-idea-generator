@@ -170,6 +170,23 @@ footer {
     width: 26vw;
 }
 
+.largeText {
+    font-size: var(--largeFont);
+}
+
+.bold {
+    font-weight: bold;
+    display: inline;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: var(--darkBlue);
+}
+
 /* buttons START */
 a:hover,
 button:hover {
