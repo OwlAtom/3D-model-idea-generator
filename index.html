@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/script.js" defer async></script>
+    <title>Document</title>
+</head>
+
+<body onload="getYear()">
+    <div id="pageContainer">
+        <div id="contentWrap">
+            <header>
+                <h1>Project name</h1>
+            </header>
+            <section class="threeGrid">
+                <div>
+                    <h2>Main content</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, quis ea voluptas temporibus
+                        ratione
+                        corrupti aut eos suscipit aperiam rem magni eveniet, ipsa distinctio provident aspernatur
+                        maiores
+                        accusamus esse laboriosam.</p>
+
+                    <button onclick='owl.confirm("It just works - Todd Howard", "Your name here")'>Click me</button>
+                    <div class="someMargin verticalGrid">
+                        <label class="switchContainer">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <label class="switchContainer someMarginOver">
+                            <input type="checkbox" checked="checked">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="someMargin">
+                        <label class="checkboxContainer">One
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkboxContainer">Two
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="someMargin somePadding">
+                        <label class="radioContainer">One
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="radio"></span>
+                        </label>
+                        <label class="radioContainer">Two
+                            <input type="radio" name="radio">
+                            <span class="radio"></span>
+                        </label>
+                    </div>
+                    <div class="rangeContainer someMargin">
+                        <input type="range" min="1" max="100" value="50" id="myRange">
+                    </div>
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="A">A</option>
+                        <option value="B" id="demo">B</option>
+                    </select>
+                    <div class="someMargin verticalGrid">
+                        <input type="text" name="" id="">
+                        <textarea class="someMarginOver" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p id="copyright"></p>
+            <div>
+                <a href="https://twitter.com/OwlAtom">Twitter</a>
+                <a href="https://github.com/OwlAtom">Github</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
