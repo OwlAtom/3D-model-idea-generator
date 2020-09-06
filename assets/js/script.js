@@ -136,7 +136,27 @@ let owl = {
     },
     removeElement: function (element) {
         element.parentNode.removeChild(element);
-
+    },
+    fillAllBlanks: function (type, fill) {
+        document.querySelector(`#${type}`).innerText = fill;
+        let string = "";
+        if (type == "prefix") {
+            string = `What Does ${fill} Mean`
+            document.querySelector(`#${type}LinkText`).innerText = string;
+            string = `https://www.google.com/search?&q=${fill}+definition`
+            document.querySelector(`#${type}Link`).href = string;
+        } else {
+            string = `Need Reference Images Of ${fill}?`
+            document.querySelector(`#${type}LinkText`).innerText = string;
+            string = `https://www.google.com/search?tbm=isch&q=${fill}`
+            document.querySelector(`#${type}Link`).href = string;
+        }
+    },
+    random3DModel: function () {
+        let chosenPrefix = prefix[Math.floor(Math.random() * prefix.length)];
+        let chosenItem = item[Math.floor(Math.random() * item.length)];
+        owl.fillAllBlanks("prefix", chosenPrefix)
+        owl.fillAllBlanks("item", chosenItem)
     }
 }
 
@@ -166,25 +186,20 @@ let prefix = ["new", "old", "modern", "asian", "useless", "tall", "big", "small"
 let item = ["pen", "sword", "cup", "wallet", "cake", "candy bar", "mouse", "cover", "fork", "spoon", "knife", "outlet", "controller",
     "lens", "charger", "plug", "headset", "flyer", "case", "monitor", "keyboard", "light", "model", "screw", "mask", "speaker", "lint roller",
     "cabinet", "drawer", "desk", "phone", "coin", "cash", "journal", "book", "coupon", "battery", "toy", "bowl", "device", "cable", "shirt", "pair of pants",
-    "camera", "calculator", "calendar", "watch", "clock", "mousemat", "chocolate", "tissue box", "bread", "pen", "playing card", "lamp", "hanger", 
-    "wallet", "plate", "speakers", "nail clippers", "chair", "thread", "drill press", "clothes", "hair tie", "ice cube tray", "blanket", "sun glasses", 
-    "bow", "desk", "scotch tape", "car", "house", "sailboat", "greeting card", "grid paper", "cat", "thermometer", "video games", "nail file", "tv", 
-    "magnet", "perfume", "soap", "watch", "towel", "bowl", "spring", "glasses", "puddle", "eraser", "glow stick", "chalk", "clock", "fork", "mp3 player", 
-    "toe ring", "boom box", "tree", "doll", "candle", "rubber duck", "sponge", "box", "charger", "clamp", "paint brush", "sand paper", "bananas", 
-    "cookie jar", "soy sauce packet", "floor", "lace", "screw", "water bottle", "carrots", "clay pot", "street lights", "mop", "bag", "beef", "truck", 
-    "door", "rusty nail", "blouse", "teddies", "USB drive", "bookmark", "lotion", "needle", "knife", "plastic fork", "air freshener", "keyboard", 
-    "book", "flag", "slipper", "mouse pad", "apple", "shirt", "picture frame", "checkbook", "packing peanuts", "helmet", "brocolli", "stockings", 
-    "lamp shade", "drawer", "controller", "lip gloss", "soda can", "shoes", "toothbrush", "washing machine", "sofa", "hair brush", "shampoo", "sandal", 
-    "radio", "rug", "pillow", "buckel", "bed", "zipper", "conditioner", "sticky note", "table", "glass", "newspaper", "remote", "deodorant", "CD", 
-    "tomato", "stop sign", "ipod", "fridge", "monitor", "flowers", "phone", "window", "cup", "toothpaste", "sharpie", "fake flowers", "twezzers", 
-    "sidewalk", "camera", "tire swing", "paper", "coasters", "ring", "pants", "bottle cap", "toilet", "shawl", "face wash", "milk", "television", 
-    "seat belt", "candy wrapper", "pool stick", "white out", "wagon", "couch", "model car", "headphones", "computer", "cork", "piano", "balloon", 
-    "pencil", "outlet", "money", "mirror", "thermostat", "shovel", "spoon", "cell phone", "bracelet", "credit card", "photo album", "eye liner", 
-    "shoe lace", "key chain", "tooth picks", "socks", "button", "food", "canvas", "rubber band", "leg warmers", "twister", "bottle", "sketch pad", 
+    "camera", "calculator", "calendar", "watch", "clock", "mousemat", "chocolate", "tissue box", "bread", "pen", "playing card", "lamp", "hanger",
+    "wallet", "plate", "speakers", "nail clippers", "chair", "thread", "drill press", "clothes", "hair tie", "ice cube tray", "blanket", "sun glasses",
+    "bow", "desk", "scotch tape", "car", "house", "sailboat", "greeting card", "grid paper", "cat", "thermometer", "video games", "nail file", "tv",
+    "magnet", "perfume", "soap", "watch", "towel", "bowl", "spring", "glasses", "puddle", "eraser", "glow stick", "chalk", "clock", "fork", "mp3 player",
+    "toe ring", "boom box", "tree", "doll", "candle", "rubber duck", "sponge", "box", "charger", "clamp", "paint brush", "sand paper", "bananas",
+    "cookie jar", "soy sauce packet", "floor", "lace", "screw", "water bottle", "carrots", "clay pot", "street lights", "mop", "bag", "beef", "truck",
+    "door", "rusty nail", "blouse", "teddies", "USB drive", "bookmark", "lotion", "needle", "knife", "plastic fork", "air freshener", "keyboard",
+    "book", "flag", "slipper", "mouse pad", "apple", "shirt", "picture frame", "checkbook", "packing peanuts", "helmet", "brocolli", "stockings",
+    "lamp shade", "drawer", "controller", "lip gloss", "soda can", "shoes", "toothbrush", "washing machine", "sofa", "hair brush", "shampoo", "sandal",
+    "radio", "rug", "pillow", "buckel", "bed", "zipper", "conditioner", "sticky note", "table", "glass", "newspaper", "remote", "deodorant", "CD",
+    "tomato", "stop sign", "ipod", "fridge", "monitor", "flowers", "phone", "window", "cup", "toothpaste", "sharpie", "fake flowers", "twezzers",
+    "sidewalk", "camera", "tire swing", "paper", "coasters", "ring", "pants", "bottle cap", "toilet", "shawl", "face wash", "milk", "television",
+    "seat belt", "candy wrapper", "pool stick", "white out", "wagon", "couch", "model car", "headphones", "computer", "cork", "piano", "balloon",
+    "pencil", "outlet", "money", "mirror", "thermostat", "shovel", "spoon", "cell phone", "bracelet", "credit card", "photo album", "eye liner",
+    "shoe lace", "key chain", "tooth picks", "socks", "button", "food", "canvas", "rubber band", "leg warmers", "twister", "bottle", "sketch pad",
     "chapter book", "cinder block", "keys", "purse", "vase"
 ];
-function random3DModel() {
-    let chosenPrefix= prefix[Math.floor(Math.random()* prefix.length)];
-    let chosenItem= item[Math.floor(Math.random()* item.length)];
-    
-}

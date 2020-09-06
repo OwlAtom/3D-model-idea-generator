@@ -14,7 +14,7 @@
     <title>Blender 3D model idea generator</title>
 </head>
 
-<body onload="getYear()">
+<body onload="getYear();owl.random3DModel();">
     <div id="pageContainer">
         <div id="contentWrap">
             <header>
@@ -23,19 +23,19 @@
             <section class="threeGrid">
                 <div>
                     <h2>Generate an idea:</h2>
-                    <button onclick='owl.confirm("It just works - Todd Howard")'>Click to generate new idea</button>
+                    <button onclick='owl.random3DModel();'>Click to generate new idea</button>
                 </div>
                 <div>
                     <p class="largeText">
-                        You should make a</p>
+                        You should make a(n)</p>
                     <p id="prefix" class="largeText bold green">Tall</p>
-                    <p id="object" class="largeText bold blue">Cup</p>
+                    <p id="item" class="largeText bold blue">Cup</p>
                 </div>
                 <div>
                     <p id="prefixLinkText">What does tall mean?</p>
                     <a href="https://www.google.com/search?&q=tall+definition" id="prefixLink">Find out here</a>
-                    <p id="objectLinkText">Need reference images of Cup?</p>
-                    <a href="https://www.google.com/search?tbm=isch&q=cup" id="objectLink">Find them here.</a>
+                    <p id="itemLinkText">Need reference images of Cup?</p>
+                    <a href="https://www.google.com/search?tbm=isch&q=cup" id="itemLink">Find them here.</a>
 
                 </div>
             </section>
