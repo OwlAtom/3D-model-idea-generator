@@ -11,5 +11,5 @@ I'm Oliver /OwlAtom I'm currently studying front-end development, and to get bet
 
 Available online [here](https://owlatom.github.io/3D-model-idea-generator)
 
-#Found a bug, or just want to chat?
+# Found a bug, or just want to chat?
 I'm always on [Twitter](twitter.com/owlatom)
